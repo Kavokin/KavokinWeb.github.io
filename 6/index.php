@@ -201,8 +201,8 @@ else {
     setcookie('policy_error', '', 100000);
   }
 
-  $user = 'u47572';
-  $pass = '4532025';
+  $user = 'u47574';
+  $pass = '7501328';
   $name = $_POST['name'];
   $email = $_POST['email'];
   $date = $_POST['birth'];
