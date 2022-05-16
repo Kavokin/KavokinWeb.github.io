@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
     <script src="index.js" defer></script>
-    <title>Кавокин В - 3 веб</title>
+    <title>Кавокин В - 5 веб</title>
 </head>
 
 <body>
@@ -25,6 +25,7 @@
         </div>
         <form method="POST" action="">
             <div class="input-group">
+                <a href="login.php?logout=1" <?php (empty($_SESSION['login'])) ? print('style="display:none"') : print('style="display:inline-block"'); ?>>Выйти</a>
                 <span class="input-group-text" id="basic-addon1">Имя</span>
                 <input type="text" class="form-control" name="name" placeholder="Ванечка" <?php if ($errors['name']) {
                                                                                                 print 'class="error"';
