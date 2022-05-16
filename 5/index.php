@@ -224,7 +224,7 @@ else {
             $stmt = $db->prepare("UPDATE members SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ? WHERE login = ?");
             $stmt->execute(array($name, $email, $date, $gender, $limbs, $bio, $policy, $member));
 
-            $superpowers = $db->prepare("UPDATE powers2 SET select = ? WHERE user_login = ? ");
+            $superpowers = $db->prepare("UPDATE powers2 SET powers = ? WHERE user_login = ? ");
             $superpowers->execute(array($powers, $member));
         } catch (PDOException $e) {
             print('Error : ' . $e->getMessage());
@@ -242,7 +242,7 @@ else {
             $stmt = $db->prepare("INSERT INTO members SET login = ?, pass = ?, name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
             $stmt->execute(array($login, $hash, $name, $email, $date, $gender, $limbs, $bio, $policy));
 
-            $superpowers = $db->prepare("INSERT INTO powers2 SET select = ?, user_login = ? ");
+            $superpowers = $db->prepare("INSERT INTO powers2 SET powers = ?, user_login = ? ");
             $superpowers->execute(array($powers, $login));
         } catch (PDOException $e) {
             print('Error : ' . $e->getMessage());
